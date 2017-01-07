@@ -267,9 +267,9 @@ body, html, .seq {
 }
 
 .seq .seq-out .seq-title, .seq .seq-out .seq-description {
-    -webkit-transform: translateX(-100%) translateZ(0);
-    -ms-transform: translateX(-100%) translateZ(0);
-    transform: translateX(-100%) translateZ(0);
+    -webkit-transform: translateY(-800%) translateZ(0);
+    -ms-transform: translateY(-800%) translateZ(0);
+    transform: translateY(-800%) translateZ(0);
 }
 
 .seq.seq-step2 {
