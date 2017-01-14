@@ -283,13 +283,33 @@ body, html, .seq {
 }
 
 .seq.seq-step3 {
-    /* When on the 3rd step, move the background by 10% */
+    /* When on the 3rd step, move the background by 5% */
 }
 
 .seq.seq-step3 .seq-bg {
     -webkit-transform: translateX(-10%) translateZ(0);
     -ms-transform: translateX(-10%) translateZ(0);
     transform: translateX(-10%) translateZ(0);
+}
+
+.seq.seq-step4 {
+    /* When on the 4th step, move the background by 5% */
+}
+
+.seq.seq-step4 .seq-bg {
+    -webkit-transform: translateX(-15%) translateZ(0);
+    -ms-transform: translateX(-15%) translateZ(0);
+    transform: translateX(-15%) translateZ(0);
+}
+
+.seq.seq-step5 {
+    /* When on the 5th step, move the background by 5% */
+}
+
+.seq.seq-step5 .seq-bg {
+    -webkit-transform: translateX(-20%) translateZ(0);
+    -ms-transform: translateX(-20%) translateZ(0);
+    transform: translateX(-20%) translateZ(0);
 }
 
 @media only screen and (min-width: 375px) {
