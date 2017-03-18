@@ -1,9 +1,8 @@
-# VTK Show Projectie - 2017
+# VTK Show 2017
+This is the project that will be used as backdrop projection for VTK Show 2017
 
-## Sequence.js License
+First install all necessary packages specified by package.json by executing: `npm install`   
+Then you can start the app: `npm start`   
+And visit in a browser at `localhost:3000`
 
-This project is powered by [Sequence.js](http://sequencejs.com/). Sequence.js is made available under the following licenses where applicable:
-
-- [GPLv3](http://sequencejs.com/licenses/#personal-open-source-overview) - For personal and open-source projects
-- [Commercial License](http://sequencejs.com/licenses/#commercial-overview) - For commercial projects
-- [Commercial OEM License](http://sequencejs.com/licenses/#commercial-oem-overview) - For commercial OEM projects
+Core functionality can be found in public/js/show.js
