@@ -61,29 +61,25 @@ function clear() {
 function render(sectie, direction) {
     console.log("SECTIE: " + sectie);
     switch (sectie) {
-        case 0:
-            setContent("<h1 style='color:red;'>VTK Show</h1>")
-            break;
-        case 1: //overgang naar zwart wachtscherm voor de show
+        case 1: //direct naar zwart wachtscherm voor de show
+            setContent()
             fadeOut()
             break;
 
             // ****************** INTRO ******************
-            //gewoon het promofilmpje (filmpje)
-            //efkes zwart
+            // gewoon de trailer
 
         case 2: //overgang naar het introfilmpje en daarna terug zwart
             //TODO change trailer file
             setContent(
-                "<video autoplay id='trailer'>" +
+                "<video autoplay id='TRAILER'>" +
                 "<source src='/video/trailer.mp4' type='video/mp4'>" +
                 "</video>"
             )
             fadeIn()
 
             //einde filmpje detecteren en dan fadeout
-            document.getElementById('trailer').addEventListener('ended', myHandler_trailer, false);
-
+            document.getElementById('TRAILER').addEventListener('ended', TRAILER_end, false);
             function myHandler_trailer(e) {
                 fadeOut();
             }
@@ -95,7 +91,6 @@ function render(sectie, direction) {
             // VDW komt op het podium (dit verschijnt dus niet op het doek) en
             // laat de lantaarnpalen één voor één uit gaan.
             // Wat later vliegt Hagrid over de huisjes en laat baby Harry uit de lucht vallen (zwarte silhouet).
-            // Eventueel alles in vectorgrafics, te bespreken
             //TODO find pic
             //TODO animate this shit
             setContent("<center><img src=/img/straat.png alt='straat' style='width: 100vw; height: 100vh;'></center>")
@@ -106,7 +101,7 @@ function render(sectie, direction) {
             // ACHTERGROND WOONKAMER HILOKKERS
             //TODO find pic
             fadeOut()
-            setContent("<center><img src=/img/woonkamer_hilok.png alt='aeyels' style='width: 100vw; height: 100vh;'></center>")
+            setContent("<center><img src=/img/woonkamer_hilok.png alt='woonkamer_hilok' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
@@ -136,14 +131,14 @@ function render(sectie, direction) {
             // Does what it says on the tin. Gaat opgenomen worden op de filmdag
             //TODO get video
             setContent(
-                "<video autoplay id='tram'>" +
+                "<video autoplay id='TRAM'>" +
                 "<source src='/video/tram.mp4' type='video/mp4'>" +
                 "</video>"
             )
             fadeIn()
 
             // einde filmpje detecteren en dan fadeout
-            document.getElementById('tram').addEventListener('ended', myHandler_trailer, false);
+            document.getElementById('TRAM').addEventListener('ended', myHandler_trailer, false);
 
             function myHandler_trailer(e) {
                 fadeOut();
@@ -162,14 +157,14 @@ function render(sectie, direction) {
             // WAT HAGRID IN DE SPIEGEL ZIET
             // Reclame Macbook youtube //TODO
             setContent(
-                "<video autoplay id='terug_in_de_tijd'>" +
-                "<source src='/video/terug_in_de_tijd.mp4' type='video/mp4'>" +
+                "<video autoplay id='MACBOOK'>" +
+                "<source src='/video/macbook_reclame.mp4' type='video/mp4'>" +
                 "</video>"
             )
             fadeIn()
 
             //einde filmpje detecteren en dan fadeout
-            document.getElementById('terug_in_de_tijd').addEventListener('ended', myHandler_trailer, false);
+            document.getElementById('MACBOOK').addEventListener('ended', myHandler_trailer, false);
 
             function myHandler_trailer(e) {
                 fadeOut();
@@ -181,18 +176,19 @@ function render(sectie, direction) {
             // Wir war van vanalles (zie script)
             //TODO everything
 
+        case 10:
             // WAT VDW IN DE SPIEGEL ZIET
             // Filmpje been met netkousen (wordt opgenomen op de filmdag)
             //TODO set video
             setContent(
-                "<video autoplay id='terug_in_de_tijd'>" +
-                "<source src='/video/terug_in_de_tijd.mp4' type='video/mp4'>" +
+                "<video autoplay id='SPIEGELVDW'>" +
+                "<source src='/video/spiegel_vdw.mp4' type='video/mp4'>" +
                 "</video>"
             )
             fadeIn()
 
             // einde filmpje detecteren en dan fadeout
-            document.getElementById('terug_in_de_tijd').addEventListener('ended', myHandler_trailer, false);
+            document.getElementById('SPIEGELVDW').addEventListener('ended', myHandler_trailer, false);
 
             function myHandler_trailer(e) {
                 fadeOut();
@@ -235,7 +231,7 @@ function render(sectie, direction) {
             // ACHTERGROND CURSUSVERKOOP
             // Ergens een gang in Zwijnaarde
             //TODO find pic
-            setContent("<center><img src=/img/aeyels2.png alt='aeyels' style='width: 100vw; height: 100vh;'></center>")
+            setContent("<center><img src=/img/gang_zwijnaarde.png alt='gang_zwijnaarde' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
@@ -244,14 +240,14 @@ function render(sectie, direction) {
             // Eventueel filmpje film overpakken van Harry Potter Chamber of secrets + draaikolk
             //TODO filmpje krijgen
             setContent(
-                "<video autoplay id='terug_in_de_tijd'>" +
+                "<video autoplay id='TERUGINDETIJD'>" +
                 "<source src='/video/terug_in_de_tijd.mp4' type='video/mp4'>" +
                 "</video>"
             )
             fadeIn()
 
             //einde filmpje detecteren en dan fadeout
-            document.getElementById('terug_in_de_tijd').addEventListener('ended', myHandler_trailer, false);
+            document.getElementById('TERUGINDETIJD').addEventListener('ended', myHandler_trailer, false);
 
             function myHandler_trailer(e) {
                 fadeOut();
@@ -262,14 +258,14 @@ function render(sectie, direction) {
             // ACHTERGROND TOVERPOORTSCENE
             // Deltaaaa  (eventueel hergebruik film vorig jaar).
             setContent(
-                "<video autoplay id='trailer'>" +
-                "<source src='/video/trailer.mp4' type='video/mp4'>" +
+                "<video autoplay id='TOVERPOORTSCENE'>" +
+                "<source src='/video/delta_geel.mp4' type='video/mp4'>" +
                 "</video>"
             )
             fadeIn()
 
             //einde filmpje detecteren en dan fadeout
-            document.getElementById('trailer').addEventListener('ended', myHandler_trailer, false);
+            document.getElementById('TOVERPOORTSCENE').addEventListener('ended', myHandler_trailer, false);
 
             function myHandler_trailer(e) {
                 fadeOut();
@@ -305,7 +301,7 @@ function render(sectie, direction) {
             // We dachten hiervoor echte meubelstukken op het podium te zetten dus zou de achtergrond vooral wat schilderijen of een vensterbank met bloemetjes moeten zijn.
             //TODO meubels
             //TODO find pic maybe 2 pics?
-            setContent("<center><img src=/img/aeyels2.png alt='aeyels' style='width: 100vw; height: 100vh;'></center>")
+            setContent("<center><img src=/img/woonkamer_lenl.png alt='woonkamer_lenl' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
@@ -313,7 +309,7 @@ function render(sectie, direction) {
             // ACHTERGROND EEN SPIEGELBEELD UIT HET VERLEDEN
             // Gang in Zwijnaarde
             //TODO find pic
-            setContent("<center><img src=/img/aeyels2.png alt='aeyels' style='width: 100vw; height: 100vh;'></center>")
+            setContent("<center><img src=/img/gang_zwijnaarde.png alt='gang_zwijnaarde' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
