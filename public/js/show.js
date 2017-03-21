@@ -80,6 +80,7 @@ function render(sectie, direction) {
 
             //einde filmpje detecteren en dan fadeout
             document.getElementById('TRAILER').addEventListener('ended', TRAILER_end, false);
+
             function myHandler_trailer(e) {
                 fadeOut();
             }
@@ -93,19 +94,30 @@ function render(sectie, direction) {
             // Wat later vliegt Hagrid over de huisjes en laat baby Harry uit de lucht vallen (zwarte silhouet).
             //TODO find pic
             //TODO animate this shit
-            setContent("<center><img src=/img/straat.png alt='straat' style='width: 100vw; height: 100vh;'></center>")
+            invisible()
+            setContent("<center><img src=/img/put.jpg alt='straat' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
         case 4:
-            // ACHTERGROND WOONKAMER HILOKKERS
-            //TODO find pic
+            // fade to black
             fadeOut()
-            setContent("<center><img src=/img/woonkamer_hilok.png alt='woonkamer_hilok' style='width: 100vw; height: 100vh;'></center>")
-            fadeIn()
             break;
 
         case 5:
+            // ACHTERGROND WOONKAMER HILOKKERS
+            //TODO find pic
+            invisible()
+            setContent("<center><img src=/img/put.png alt='woonkamer_hilok' style='width: 100vw; height: 100vh;'></center>")
+            fadeIn()
+            break;
+
+        case 6:
+            // fade to black
+            fadeOut()
+            break;
+
+        case 7:
             // HAGRID ZIJN LIEDJE
             // Wolken die voorbij gaan.
             // Beeld van de Wegisweg
@@ -114,19 +126,28 @@ function render(sectie, direction) {
             setContent("<center><img src=/img/wegisweg.png alt='wegisweg' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
-        case 6:
 
-        case 7:
+        case 8:
+            // fade to black
+            fadeOut()
+            break;
+
+        case 9:
             // ACHTERGROND OP HET PERRON
             // Gewoon een tramperron van Gent Sint Pieters.
-            // Linkerhelft en rechterhelft zouden twee verschillende perrons moeten
+            // mss toch doen verschuiven? controle over snelheid? Geen muur gwn projectie?
             // zijn gescheiden worden door een muur waar Harry, Ron en Hermelien doorlopen
             //TODO take pic
             setContent("<center><img src=/img/perron.png alt='perron' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
-        case 8:
+        case 9:
+            // fade to black
+            fadeOut()
+            break;
+
+        case 10:
             // FILMPJE HARRY, RON EN HERMELIEN PAKKEN DE TRAM NAAR ZWIJNAARDE
             // Does what it says on the tin. Gaat opgenomen worden op de filmdag
             //TODO get video
@@ -145,7 +166,7 @@ function render(sectie, direction) {
             }
             break;
 
-        case 9:
+        case 11:
             // ACHTERGROND LERAARSKAMER ZWIJNAARDE
             // Ergens een leuke oude zaal vinden met wat zetels
             //TODO find pic
@@ -153,9 +174,15 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 10:
+        case 12:
+            // fade to black
+            fadeOut()
+            break;
+
+        case 13:
             // WAT HAGRID IN DE SPIEGEL ZIET
-            // Reclame Macbook youtube //TODO
+            // Reclame Macbook youtube
+            //TODO download and cut, put in mirror?
             setContent(
                 "<video autoplay id='MACBOOK'>" +
                 "<source src='/video/macbook_reclame.mp4' type='video/mp4'>" +
@@ -203,12 +230,22 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
+        case 6:
+            // fade to black
+            fadeOut()
+            break;
+
         case 10:
             // ACHTERGROND LEYS ZIJN LES
             // Natuurkundig lokaal met blackbord
             //TODO find pic
             setContent("<center><img src=/img/lokaal_natuurkunde.png alt='lokaal_natuurkunde' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
+            break;
+
+        case 6:
+            // fade to black
+            fadeOut()
             break;
 
         case 10:
@@ -219,6 +256,11 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
+        case 6:
+            // fade to black
+            fadeOut()
+            break;
+
         case 10:
             // ACHTERGROND HENNIE HAAR LES
             // 3 draken (WOBA, ANA en MELA)
@@ -227,12 +269,22 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
+        case 6:
+            // fade to black
+            fadeOut()
+            break;
+
         case 10:
             // ACHTERGROND CURSUSVERKOOP
             // Ergens een gang in Zwijnaarde
             //TODO find pic
             setContent("<center><img src=/img/gang_zwijnaarde.png alt='gang_zwijnaarde' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
+            break;
+
+        case 6:
+            // fade to black
+            fadeOut()
             break;
 
         case 10:
