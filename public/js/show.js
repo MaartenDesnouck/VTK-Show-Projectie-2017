@@ -4,7 +4,7 @@ var sectie = 0
 document.onkeypress = function kiesSectie() {
     switch (event.keyCode) {
         case 113:
-            // S - previous
+            // Q - previous
             sectie--;
             if (sectie < 0) {
                 sectie = 0;
@@ -33,6 +33,18 @@ function fadeIn() {
 
 function fadeOut() {
     $('#content').animate({
+        opacity: 0.0,
+    }, 2000, function() {});
+}
+
+function fadeInPart(id) {
+    $('#' + id).animate({
+        opacity: 1.0,
+    }, 2000, function() {});
+}
+
+function fadeOutPart(id) {
+    $('#' + id).animate({
         opacity: 0.0,
     }, 2000, function() {});
 }
@@ -92,37 +104,55 @@ function render(sectie, direction) {
             // VDW komt op het podium (dit verschijnt dus niet op het doek) en
             // laat de lantaarnpalen één voor één uit gaan.
             // Wat later vliegt Hagrid over de huisjes en laat baby Harry uit de lucht vallen (zwarte silhouet).
-            //TODO find pic
-            //TODO animate this shit
+            //TODO find pic and photshop verions of it
             invisible()
-            setContent("<center><img src=/img/put.jpg alt='straat' style='width: 100vw; height: 100vh;'></center>")
+            setContent(
+                "<div>" +
+                "<img src=/img/VTK.png alt='straat004' id='straat003' style='position: absolute; margin:auto; width: 100vw; height: 100vh;'>" +
+                "<img src=/img/VTK.png alt='straat003' id='straat003' style='position: absolute; margin:auto; width: 100vw; height: 100vh;'>" +
+                "<img src=/img/put.jpg alt='straat002' id='straat002' style='position: absolute; margin:auto; width: 100vw; height: 100vh;'>" +
+                "<img src=/img/VTK.png alt='straat001' id='straat001' style='position: absolute; margin:auto; width: 100vw; height: 100vh;'>" +
+                "</div>"
+            )
             fadeIn()
             break;
 
         case 4:
-            // fade to black
-            fadeOut()
+            fadeOutPart('straat001')
             break;
 
         case 5:
-            // ACHTERGROND WOONKAMER HILOKKERS
-            //TODO find pic
-            invisible()
-            setContent("<center><img src=/img/put.png alt='woonkamer_hilok' style='width: 100vw; height: 100vh;'></center>")
-            fadeIn()
+            fadeOutPart('straat002')
             break;
 
         case 6:
+            fadeOutPart('straat003')
+            break;
+
+        case 7:
+            fadeOutPart('straat004')
+            break;
+
+        case 8:
+            // ACHTERGROND WOONKAMER HILOKKERS
+            //TODO find pic
+            invisible()
+            setContent("<center><img src=/img/put.jpg alt='woonkamer_hilok' style='width: 100vw; height: 100vh;'></center>")
+            fadeIn()
+            break;
+
+        case 9:
             // fade to black
             fadeOut()
             break;
 
-        case 7:
+        case 10:
             // HAGRID ZIJN LIEDJE
             // Wolken die voorbij gaan.
             // Beeld van de Wegisweg
             //TODO find pic
             //TODO animate this shit of video?
+            // Animate long pic moving from left ot right
             setContent("<center><img src=/img/wegisweg.png alt='wegisweg' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
