@@ -181,6 +181,7 @@ function render(sectie, direction) {
             // FILMPJE HARRY, RON EN HERMELIEN PAKKEN DE TRAM NAAR ZWIJNAARDE
             // Does what it says on the tin. Gaat opgenomen worden op de filmdag
             //TODO get video
+            invisible()
             setContent(
                 "<video autoplay id='TRAM'>" +
                 "<source src='/video/tram.mp4' type='video/mp4'>" +
@@ -200,7 +201,7 @@ function render(sectie, direction) {
             // ACHTERGROND LERAARSKAMER ZWIJNAARDE
             // Ergens een leuke oude zaal vinden met wat zetels
             //TODO find pic
-            setContent("<center><img src=/img/leraarskamer.png alt='leraarskamer' style='width: 100vw; height: 100vh;'></center>")
+            setContent("<center><img src=/img/leraarskamer.jpg alt='leraarskamer' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
