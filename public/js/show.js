@@ -108,7 +108,7 @@ function render(sectie, direction) {
             invisible()
             setContent(
                 "<div>" +
-                "<img src=/img/VTK.png alt='straat004' id='straat003' style='position: absolute; margin:auto; width: 100vw; height: 100vh;'>" +
+                "<img src=/img/VTK.png alt='straat004' id='straat004' style='position: absolute; margin:auto; width: 100vw; height: 100vh;'>" +
                 "<img src=/img/VTK.png alt='straat003' id='straat003' style='position: absolute; margin:auto; width: 100vw; height: 100vh;'>" +
                 "<img src=/img/put.jpg alt='straat002' id='straat002' style='position: absolute; margin:auto; width: 100vw; height: 100vh;'>" +
                 "<img src=/img/VTK.png alt='straat001' id='straat001' style='position: absolute; margin:auto; width: 100vw; height: 100vh;'>" +
@@ -201,7 +201,8 @@ function render(sectie, direction) {
             // ACHTERGROND LERAARSKAMER ZWIJNAARDE
             // Ergens een leuke oude zaal vinden met wat zetels
             //TODO find pic
-            setContent("<center><img src=/img/leraarskamer.jpg alt='leraarskamer' style='width: 100vw; height: 100vh;'></center>")
+            invisible()
+            setContent("<center><img src=/img/leraarskamer2.jpg alt='leraarskamer' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
@@ -253,10 +254,13 @@ function render(sectie, direction) {
             }
             break;
 
+            // BLACKOUT
+
         case 10:
             // ACHTERGROND SORTEERSCENE
             // Grote eetzaal
             //TODO find pic
+            invisible()
             setContent("<center><img src=/img/grote_eetzaal.png alt='grote_eetzaal' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
@@ -342,7 +346,7 @@ function render(sectie, direction) {
             // Deltaaaa  (eventueel hergebruik film vorig jaar).
             setContent(
                 "<video autoplay id='TOVERPOORTSCENE'>" +
-                "<source src='/video/delta_geel.mp4' type='video/mp4'>" +
+                "<source src='/video/DELTA_GEEL.mp4' type='video/mp4'>" +
                 "</video>"
             )
             fadeIn()
@@ -360,6 +364,7 @@ function render(sectie, direction) {
             // Creepy donker bos met een vuurtje waarrond de acteurs kunnen zitten
             //TODO foto vinden
             //TODO vuur animeren
+            invisible()
             setContent("<center><img src=/img/kampvuur.png alt='kampvuur' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
@@ -368,6 +373,7 @@ function render(sectie, direction) {
             // ACHTERGROND LAPLACE TRANSFORMATIE COISE
             // Lokaal in Plateau
             //TODO find pic
+            invisible()
             setContent("<center><img src=/img/lokaal_coise.png alt='lokaal_coise' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
@@ -378,12 +384,13 @@ function render(sectie, direction) {
             // Als ze dan het dagboek terug open doet staat er een afbeelding van het hart.
             //TODO foto van het dagboek?
 
+
         case 10:
             // ACHTERGROND DOOD VAN LILLY
             // Woonkamer Lilly en Leys. Nadat Coisemort Harry heeft proberen vermoorden moet elk meubelstuk kapot zijn buiten de spiegel.
             // We dachten hiervoor echte meubelstukken op het podium te zetten dus zou de achtergrond vooral wat schilderijen of een vensterbank met bloemetjes moeten zijn.
             //TODO meubels
-            //TODO find pic maybe 2 pics?
+            //TODO find pic
             setContent("<center><img src=/img/woonkamer_lenl.png alt='woonkamer_lenl' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
