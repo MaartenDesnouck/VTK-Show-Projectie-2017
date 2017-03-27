@@ -34,7 +34,9 @@ function fadeIn() {
 function fadeOut() {
     $('#content').animate({
         opacity: 0.0,
-    }, 2000, function() {});
+    }, 2000, function() {
+        setContent()
+    });
 }
 
 function fadeInPart(id) {
@@ -99,10 +101,6 @@ function render(sectie, direction) {
 
         case 3:
             // ACHTERGROND GOOGLE DRIVE STRAAT
-            // Straatbeeld dat donker wordt. De lantaarns en lichtjes in de huisjes gaan aan.
-            // VDW komt op het podium (dit verschijnt dus niet op het doek) en
-            // laat de lantaarnpalen één voor één uit gaan.
-            // Wat later vliegt Hagrid over de huisjes en laat baby Harry uit de lucht vallen (zwarte silhouet).
             invisible()
             setContent(
                 "<div>" +
@@ -138,41 +136,30 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 10:
-            // HAGRID ZIJN LIEDJE
-            // Wolken die voorbij gaan.
-            // Beeld van de Wegisweg
-            //TODO insert filmpke
-            invisible()
+        case 9:
+            // HAGRID ZIJN LIEDJE, EINDIGD MET ACHTERGROND OP HET PERRON
+
             setContent(
-                "<video autoplay id=''>" +
-                "<source src='/video/.mp4' type='video/mp4'>" +
+                "<video autoplay id='HAGRID'>" +
+                "<source src='/video/HAGRID.mp4' type='video/mp4' style='width: 100vw; height: 100vh;'>" +
                 "</video>"
             )
-            fadeIn()
 
             // einde filmpje detecteren en dan fadeout
-            document.getElementById('TRAM').addEventListener('ended', myHandler_trailer, false);
+            document.getElementById('HAGRID').addEventListener('ended', myHandler_trailer, false);
 
             function myHandler_trailer(e) {
                 fadeOut();
             }
             break;
 
-        case 12:
-            // ACHTERGROND OP HET PERRON
-            //TODO filmpje zal hier op eindigen
-            invisible()
-            setContent("<center><img src=/img/STATION.JPG alt='perron' style='width: 100vw; height: 100vh;'></center>")
-            fadeIn()
-            break;
 
-        case 13:
+        case 10:
             // fade to black
             fadeOut()
             break;
 
-        case 14:
+        case 11:
             // FILMPJE HARRY, RON EN HERMELIEN PAKKEN DE TRAM NAAR ZWIJNAARDE
             // Does what it says on the tin. Gaat opgenomen worden op de filmdag
             invisible()
@@ -191,7 +178,7 @@ function render(sectie, direction) {
             }
             break;
 
-        case 15:
+        case 12:
             // ACHTERGROND LERAARSKAMER ZWIJNAARDE
             // Ergens een leuke oude zaal vinden met wat zetels
             invisible()
@@ -199,15 +186,14 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 16:
+        case 13:
             // fade to black
             fadeOut()
             break;
 
-        case 17:
+        case 14:
             // WAT HAGRID IN DE SPIEGEL ZIET
             // Reclame Macbook youtube
-            //TODO Find wall pic
             //TODO Cut wall pic
             //TODO get pic of mirror
             //TODO combine in 1 pic and create hole
@@ -229,15 +215,21 @@ function render(sectie, direction) {
             }
             break;
 
-        case 19:
+        case 15:
             // WAT VDW IN DE SPIEGEL ZIET
             // Filmpje been met netkousen (wordt opgenomen op de filmdag)
-            //TODO get video, put in mirror
+            //TODO put in mirror
             invisible()
             setContent(
-                "<video autoplay id='VANDEWALLE_SPIEGEL'>" +
+                "<div id='wrap_video'>" +
+                "<div id='video_box' style='position:relative;'>" +
+                "<div id='video_overlays' style='position:absolute; z-index:3;'>" +
+                "<img src=/img/hogwarts2.jpg alt='grote_eetzaal' style='width: 100vw; height: 100vh;'>" +
+                "</div>" +
+                "<div><video autoplay id='VANDEWALLE_SPIEGEL'>" +
                 "<source src='/video/VANDEWALLE_SPIEGEL.mp4' type='video/mp4'>" +
-                "</video>"
+                "</video></div>" +
+                "</div></div>"
             )
             fadeIn()
 
@@ -249,11 +241,11 @@ function render(sectie, direction) {
             }
             break;
 
-        case 18:
+        case 16:
             // WAT HENNIE IN DE SPIEGEL ZIET
             // Wir war van vanalles (zie script)
             //TODO filmpje krijgen
-
+            //TODO put in mirror
             invisible()
             setContent(
                 "<video autoplay id=''>" +
@@ -270,14 +262,29 @@ function render(sectie, direction) {
             }
             break;
 
-            // BLACKOUT
+        case 17:
+            // fade to black
+            fadeOut()
+            break;
 
-        case 20:
+        case 18:
             // ACHTERGROND SORTEERSCENE
             // Grote eetzaal
-            //TODO replace this pic, want watermerk
             invisible()
             setContent("<center><img src=/img/hogwarts2.jpg alt='grote_eetzaal' style='width: 100vw; height: 100vh;'></center>")
+            fadeIn()
+            break;
+
+        case 19:
+            // fade to black
+            fadeOut()
+            break;
+
+        case 20:
+            // ACHTERGROND LEYS ZIJN LES
+            // Natuurkundig lokaal met blackbord
+            invisible()
+            setContent("<center><img src=/img/AUD_A2.JPG alt='lokaal_natuurkunde' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
@@ -287,10 +294,10 @@ function render(sectie, direction) {
             break;
 
         case 22:
-            // ACHTERGROND LEYS ZIJN LES
-            // Natuurkundig lokaal met blackbord
+            // ACHTERGROND DHOEDT ZIJN LES
+            // Computerzaal met blackbord
             invisible()
-            setContent("<center><img src=/img/AUD_A2.JPG alt='lokaal_natuurkunde' style='width: 100vw; height: 100vh;'></center>")
+            setContent("<center><img src=/img/PC_B.JPG alt='PCB' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
@@ -300,44 +307,11 @@ function render(sectie, direction) {
             break;
 
         case 24:
-            // ACHTERGROND DHOEDT ZIJN LES
-            // Computerzaal met blackbord
-            invisible()
-            setContent("<center><img src=/img/PC_B.JPG alt='PCB' style='width: 100vw; height: 100vh;'></center>")
-            fadeIn()
-            break;
-
-        case 25:
-            // fade to black
-            fadeOut()
-            break;
-
-        case 26:
             // Filmpje hennie die bord afveegt
             invisible()
             setContent(
-                "<video autoplay id=''>" +
-                "<source src='/video/.mp4' type='video/mp4'>" +
-                "</video>"
-            )
-            fadeIn()
-            break;
-
-        case 27:
-            // Hennie haar les
-            invisible()
-            setContent("<center><img src=/img/AUD_J.JPG alt='mela' style='width: 100vw; height: 100vh;'></center>")
-            fadeIn()
-            break;
-
-            //TODO OVERGANG?
-
-        case 27:
-            // DRIE draken van game of thrones
-            invisible()
-            setContent(
-                "<video autoplay id='GOT'>" +
-                "<source src='/video/GOT.mp4' type='video/mp4'>" +
+                "<video autoplay id='HENNIE_BORD'>" +
+                "<source src='/video/HENNIE_BORD.mp4' type='video/mp4'>" +
                 "</video>"
             )
             fadeIn()
@@ -350,19 +324,54 @@ function render(sectie, direction) {
             }
             break;
 
+        case 25:
+            // fade to black
+            fadeOut()
+            break;
+
+        case 26:
+            // Hennie haar les
+            invisible()
+            setContent("<center><img src=/img/AUD_J.JPG alt='mela' style='width: 100vw; height: 100vh;'></center>")
+            fadeIn()
+            break;
+
+        case 27:
+            // fade to black
+            fadeOut()
+            break;
+
         case 28:
+            // DRIE draken van game of thrones
+            invisible()
+            setContent(
+                "<video autoplay id='GOT_DRAKEN'>" +
+                "<source src='/video/GOT_DRAKEN.mp4' type='video/mp4'>" +
+                "</video>"
+            )
+            fadeIn()
+
+            // einde filmpje detecteren en dan fadeout
+            document.getElementById('GOT_DRAKEN').addEventListener('ended', myHandler_trailer, false);
+
+            function myHandler_trailer(e) {
+                fadeOut();
+            }
+            break;
+
+        case 29:
             // ACHTERGROND HENNIE HAAR LES
             invisible()
             setContent("<center><img src=/img/AUD_A2.JPG alt='mela' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
-        case 29:
+        case 30:
             // fade to black
             fadeOut()
             break;
 
-        case 30:
+        case 31:
             // ACHTERGROND CURSUSVERKOOP
             // Ergens een gang in Zwijnaarde
             invisible()
@@ -370,12 +379,12 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 31:
+        case 32:
             // fade to black
             fadeOut()
             break;
 
-        case 32:
+        case 33:
             // FILMPJE TERUG IN DE TIJD
             // Eventueel filmpje film overpakken van Harry Potter Chamber of secrets + draaikolk
             invisible()
@@ -394,7 +403,7 @@ function render(sectie, direction) {
             }
             break;
 
-        case 32:
+        case 34:
             // fade to black
             fadeOut()
             break;
@@ -404,13 +413,13 @@ function render(sectie, direction) {
             //*****************
 
 
-        case 31:
+        case 35:
             invisible()
             setContent("<center><img src=/img/VTK.png alt='VTK_schild' style='height: 100vh;'></center>")
             fadeIn()
             break;
 
-        case 32:
+        case 36:
             // fade to black
             fadeOut()
             break;
@@ -419,7 +428,7 @@ function render(sectie, direction) {
             //   TWEEDE DEEL
             //*****************
 
-        case 33:
+        case 37:
             // FILMPJE TERUG IN DE TIJD
             invisible()
             setContent(
@@ -437,9 +446,12 @@ function render(sectie, direction) {
             }
             break;
 
-            //TODO overgang
+        case 38:
+            // fade to black
+            fadeOut()
+            break;
 
-        case 34:
+        case 39:
             // ACHTERGROND TOVERPOORTSCENE
             // Deltaaaa
             //TODO aansluiten op vorig filmpje?
@@ -452,68 +464,37 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 35:
+        case 40:
             // fade to black
             fadeOut()
             break;
 
-        case 36:
+        case 41:
             // BOS SCENE
             // Creepy donker bos met een vuurtje waarrond de acteurs kunnen zitten
             // TODO vuur animeren
             invisible()
-            setContent("<center><img src=/img/forrest.jpg alt='kampvuur' style='width: 100vw; height: 100vh;'></center>")
+            setContent(
+                "<div>" +
+                "<img src=/img/forrest.jpg alt='kampvuur' style='position: absolute; width: 100vw; height: 100vh;'>" +
+                "<img src=/img/fire2.gif alt='fire' style='position: absolute; width: 15vw; height: 40vh; bottom: -10vh; left:85vh'>" +
+                "</div>"
+            )
             fadeIn()
             break;
 
             //TODO VUUR, srlsly
 
-        case 37:
+        case 42:
             // fade to black
             fadeOut()
             break;
 
-        case 38:
+        case 43:
             // ACHTERGROND LIEFDESSCENE
             // gras aerial shot
             invisible()
             setContent("<center><img src=/img/grass2.jpg alt='gras' style='width: 100vw; height: 100vh;'></center>")
-            fadeIn()
-            break;
-
-        case 39:
-            // fade to black
-            fadeOut()
-            break;
-
-        case 40:
-            // ACHTERGROND LAPLACE TRANSFORMATIE COISE
-            // Lokaal in Plateau
-            //TODO find pic, gwn gang van harry potter ofzo
-            invisible()
-            setContent("<center><img src=/img/AUD_J.JPG alt='lokaal_coise' style='width: 100vw; height: 100vh;'></center>")
-            fadeIn()
-            break;
-
-        case 41:
-            // fade to black
-            fadeOut()
-            break;
-
-        case 42:
-            // LAPLACE TRANSFORMATIE COISE
-            // Coise rukt hart uit lichaam //schaduw en steekt het in haar dagboek.
-            // Als ze dan het dagboek terug open doet staat er een afbeelding van het hart.
-            //TODO foto van het dagboek?
-            //filmpje van coise
-
-        case 43:
-            // ACHTERGROND DOOD VAN LILLY
-            // Woonkamer Lilly en Leys. Nadat Coisemort Harry heeft proberen vermoorden moet elk meubelstuk kapot zijn buiten de spiegel.
-            // We dachten hiervoor echte meubelstukken op het podium te zetten dus zou de achtergrond vooral wat schilderijen of een vensterbank met bloemetjes moeten zijn.
-            //TODO photoshop before and after version
-            invisible()
-            setContent("<center><img src=/img/livingroom_empty.jpg alt='woonkamer_lenl1' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
@@ -523,6 +504,54 @@ function render(sectie, direction) {
             break;
 
         case 45:
+            // ACHTERGROND LAPLACE TRANSFORMATIE COISE
+            // Lokaal in Plateau
+            invisible()
+            setContent("<center><img src=/img/hogwarts4.jpg alt='hogwarts4' style='width: 100vw; height: 100vh;'></center>")
+            fadeIn()
+            break;
+
+        case 46:
+            // fade to black
+            fadeOut()
+            break;
+
+        case 47:
+            // LAPLACE TRANSFORMATIE COISE
+            // Coise rukt hart uit lichaam //schaduw en steekt het in haar dagboek.
+            // Als ze dan het dagboek terug open doet staat er een afbeelding van het hart.
+            invisible()
+            setContent(
+                "<video autoplay id='COISE_HART'>" +
+                "<source src='/video/COISE_HART.mp4' type='video/mp4'>" +
+                "</video>"
+            )
+            fadeIn()
+
+            //einde filmpje detecteren en dan fadeout
+            document.getElementById('COISE_HART').addEventListener('ended', myHandler_trailer, false);
+
+            function myHandler_trailer(e) {
+                fadeOut();
+            }
+            break;
+
+        case 48:
+            // ACHTERGROND DOOD VAN LILLY
+            // Woonkamer Lilly en Leys. Nadat Coisemort Harry heeft proberen vermoorden moet elk meubelstuk kapot zijn buiten de spiegel.
+            // We dachten hiervoor echte meubelstukken op het podium te zetten dus zou de achtergrond vooral wat schilderijen of een vensterbank met bloemetjes moeten zijn.
+            //TODO photoshop before and after version
+            invisible()
+            setContent("<center><img src=/img/livingroom_empty.jpg alt='woonkamer_lenl1' style='width: 100vw; height: 100vh;'></center>")
+            fadeIn()
+            break;
+
+        case 49:
+            // fade to black
+            fadeOut()
+            break;
+
+        case 50:
             // ACHTERGROND DOOD VAN LILLY
             invisible()
             setContent("<center><img src=/img/livingroom_empty.jpg alt='woonkamer_lenl2' style='width: 100vw; height: 100vh;'></center>")
@@ -531,21 +560,20 @@ function render(sectie, direction) {
 
             // TODO VORTEX?
 
-        case 46:
+        case 51:
             // fade to black
             fadeOut()
             break;
 
-        case 47:
+        case 52:
             // ACHTERGROND EEN SPIEGELBEELD UIT HET VERLEDEN
             // Gang in Zwijnaarde
-            //TODO find pic
             invisible()
             setContent("<center><img src=/img/hogwarts1.jpg alt='gang_zwijnaarde2' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
-        case 48:
+        case 53:
             // fade to black
             fadeOut()
             break;
@@ -554,7 +582,7 @@ function render(sectie, direction) {
 
             // Liedje: I wanna be be evil
 
-        case 49:
+        case 53:
             // ACHTERGROND VECHTSCENE
             // Dezelfde achtergrond als bij de leraarskamer.
             invisible()
@@ -562,30 +590,31 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 50:
+        case 54:
             // fade to black
             fadeOut()
             break;
 
-        case 51:
+        case 55:
             // AFTITLEING
             invisible()
             setContent(
-                "<video autoplay id='AFTITLELING'>" +
-                "<source src='/video/AFTITLELING.mp4' type='video/mp4'>" +
+                "<video autoplay id='AFTITELING'>" +
+                "<source src='/video/AFTITELING.mp4' type='video/mp4'>" +
                 "</video>"
             )
             fadeIn()
 
             //einde filmpje detecteren en dan fadeout
-            document.getElementById('VORTEX_NA_PAUZE').addEventListener('ended', myHandler_trailer, false);
+            document.getElementById('AFTITELING').addEventListener('ended', myHandler_trailer, false);
 
             function myHandler_trailer(e) {
                 fadeOut();
             }
             break;
 
-        case 57:
+        case 56:
+            invisible()
             setContent(
                 "<video autoplay loop muted id='schild'>" +
                 "<source src='/video/schild.mp4' type='video/mp4'>" +
@@ -594,7 +623,7 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 58:
+        case 57:
             fadeOut()
             break;
     }
