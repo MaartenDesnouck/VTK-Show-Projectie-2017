@@ -169,13 +169,6 @@ function render(sectie, direction) {
                 "</video>"
             )
             fadeIn()
-
-            // einde filmpje detecteren en dan fadeout
-            document.getElementById('TRAM').addEventListener('ended', myHandler_trailer, false);
-
-            function myHandler_trailer(e) {
-                fadeOut();
-            }
             break;
 
         case 12:
@@ -201,13 +194,6 @@ function render(sectie, direction) {
                 "</video>"
             )
             fadeIn()
-
-            //einde filmpje detecteren en dan fadeout
-            document.getElementById('MACBOOK').addEventListener('ended', myHandler_trailer, false);
-
-            function myHandler_trailer(e) {
-                fadeOut();
-            }
             break;
 
         case 15:
@@ -238,20 +224,12 @@ function render(sectie, direction) {
                 "</video>"
             )
             fadeIn()
-
-            // einde filmpje detecteren en dan fadeout
-            document.getElementById('VANDEWALLE_SPIEGEL').addEventListener('ended', myHandler_trailer, false);
-
-            function myHandler_trailer(e) {
-                fadeOut();
-            }
             break;
 
         case 19:
             // fade to black
             fadeOut()
             break;
-
 
         case 20:
             // ACHTERGROND LERAARSKAMER ZWIJNAARDE
@@ -276,21 +254,9 @@ function render(sectie, direction) {
                 "</video>"
             )
             fadeIn()
-
-            // einde filmpje detecteren en dan fadeout
-            document.getElementById('HENNIE_SPIEGEL').addEventListener('ended', myHandler_trailer, false);
-
-            function myHandler_trailer(e) {
-                fadeOut();
-            }
             break;
 
         case 23:
-            // fade to black
-            fadeOut()
-            break;
-
-        case 24:
             // ACHTERGROND SORTEERSCENE
             // Grote eetzaal
             invisible()
@@ -298,12 +264,12 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 25:
+        case 24:
             // fade to black
             fadeOut()
             break;
 
-        case 26:
+        case 25:
             // ACHTERGROND LEYS ZIJN LES
             // Natuurkundig lokaal met blackbord
             invisible()
@@ -311,12 +277,12 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 27:
+        case 26:
             // fade to black
             fadeOut()
             break;
 
-        case 28:
+        case 27:
             // ACHTERGROND DHOEDT ZIJN LES
             // Computerzaal met blackbord
             invisible()
@@ -324,12 +290,12 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 29:
+        case 28:
             // fade to black
             fadeOut()
             break;
 
-        case 30:
+        case 29:
             // Filmpje hennie die bord afveegt
             invisible()
             setContent(
@@ -338,13 +304,13 @@ function render(sectie, direction) {
                 "</video>"
             )
             fadeIn()
+            break;
 
-            // einde filmpje detecteren en dan fadeout
-            document.getElementById('GOT').addEventListener('ended', myHandler_trailer, false);
-
-            function myHandler_trailer(e) {
-                fadeOut();
-            }
+        case 30:
+            // Hennie haar les
+            invisible()
+            setContent("<center><img src=/img/AUD_J.JPG alt='mela' style='width: 100vw; height: 100vh;'></center>")
+            fadeIn()
             break;
 
         case 31:
@@ -353,18 +319,6 @@ function render(sectie, direction) {
             break;
 
         case 32:
-            // Hennie haar les
-            invisible()
-            setContent("<center><img src=/img/AUD_J.JPG alt='mela' style='width: 100vw; height: 100vh;'></center>")
-            fadeIn()
-            break;
-
-        case 33:
-            // fade to black
-            fadeOut()
-            break;
-
-        case 34:
             // DRIE draken van game of thrones
             invisible()
             setContent(
@@ -373,19 +327,25 @@ function render(sectie, direction) {
                 "</video>"
             )
             fadeIn()
-
-            // einde filmpje detecteren en dan fadeout
-            document.getElementById('GOT_DRAKEN').addEventListener('ended', GOT_DRAKEN, false);
-
-            function GOT_DRAKEN(e) {
-                fadeOut();
-            }
             break;
 
-        case 35:
+        case 33:
             // ACHTERGROND HENNIE HAAR LES
             invisible()
             setContent("<center><img src=/img/AUD_J.JPG alt='mela' style='width: 100vw; height: 100vh;'></center>")
+            fadeIn()
+            break;
+
+        case 34:
+            // fade to black
+            fadeOut()
+            break;
+
+        case 35:
+            // ACHTERGROND CURSUSVERKOOP
+            // Ergens een gang in Zwijnaarde
+            invisible()
+            setContent("<center><img src=/img/hogwarts1.jpg alt='gang_zwijnaarde1' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
@@ -395,19 +355,6 @@ function render(sectie, direction) {
             break;
 
         case 37:
-            // ACHTERGROND CURSUSVERKOOP
-            // Ergens een gang in Zwijnaarde
-            invisible()
-            setContent("<center><img src=/img/hogwarts1.jpg alt='gang_zwijnaarde1' style='width: 100vw; height: 100vh;'></center>")
-            fadeIn()
-            break;
-
-        case 38:
-            // fade to black
-            fadeOut()
-            break;
-
-        case 39:
             // FILMPJE TERUG IN DE TIJD
             // Eventueel filmpje film overpakken van Harry Potter Chamber of secrets + draaikolk
             invisible()
@@ -417,18 +364,6 @@ function render(sectie, direction) {
                 "</video>"
             )
             fadeIn()
-
-            //einde filmpje detecteren en dan fadeout
-            document.getElementById('VORTEX_VOOR_PAUZE').addEventListener('ended', VORTEX_VOOR_PAUZE, false);
-
-            function VORTEX_VOOR_PAUZE(e) {
-                fadeOut();
-            }
-            break;
-
-        case 40:
-            // fade to black
-            fadeOut()
             break;
 
             //*****************
@@ -436,13 +371,13 @@ function render(sectie, direction) {
             //*****************
 
 
-        case 41:
+        case 38:
             invisible()
             setContent("<center><img src=/img/VTK.png alt='VTK_schild' style='height: 100vh;'></center>")
             fadeIn()
             break;
 
-        case 42:
+        case 39:
             // fade to black
             fadeOut()
             break;
@@ -451,7 +386,7 @@ function render(sectie, direction) {
             //   TWEEDE DEEL
             //*****************
 
-        case 43:
+        case 40:
             // FILMPJE TERUG IN DE TIJD
             invisible()
             setContent(
@@ -460,21 +395,14 @@ function render(sectie, direction) {
                 "</video>"
             )
             fadeIn()
-
-            //einde filmpje detecteren en dan fadeout
-            document.getElementById('VORTEX_NA_PAUZE').addEventListener('ended', VORTEX_NA_PAUZE, false);
-
-            function VORTEX_NA_PAUZE(e) {
-                fadeOut();
-            }
             break;
 
-        case 44:
+        case 41:
             // fade to black
             fadeOut()
             break;
 
-        case 45:
+        case 42:
             // ACHTERGROND TOVERPOORTSCENE
             // Deltaaaa
             invisible()
@@ -486,34 +414,34 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 46:
+        case 43:
             // fade to black
             fadeOut()
             break;
 
-        case 47:
+        case 44:
             // BOS SCENE
             invisible()
             setContent(
                 "<div>" +
                 "<img src=/img/forrest.jpg alt='bos' style='position: absolute; width: 100vw; height: 100vh;'>" +
-                "<img src=/img/fire2.gif alt='fire' style='position: absolute; width: 15vw; height: 40vh; bottom: -10vh; left:85vh'>" +
+                "<img src=/img/fire2.gif alt='fire' style='position: absolute; width: 15vw; height: 60vh; bottom: -5vh; left:85vh'>" +
                 "<img src=/img/forrest.jpg alt='bos' id='bos001' style='position: absolute; width: 100vw; height: 100vh;'>" +
                 "</div>"
             )
             fadeIn()
             break;
 
-        case 48:
+        case 45:
             fadeOutPart('bos001')
             break;
 
-        case 49:
+        case 46:
             // fade to black
             fadeOut()
             break;
 
-        case 50:
+        case 47:
             // ACHTERGROND LIEFDESSCENE
             // gras aerial shot
             invisible()
@@ -521,12 +449,12 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 51:
+        case 48:
             // fade to black
             fadeOut()
             break;
 
-        case 52:
+        case 49:
             // ACHTERGROND LAPLACE TRANSFORMATIE COISE
             // Lokaal in Plateau
             invisible()
@@ -534,12 +462,12 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 53:
+        case 50:
             // fade to black
             fadeOut()
             break;
 
-        case 54:
+        case 51:
             // LAPLACE TRANSFORMATIE COISE
             // Coise rukt hart uit lichaam //schaduw en steekt het in haar dagboek.
             // Als ze dan het dagboek terug open doet staat er een afbeelding van het hart.
@@ -550,21 +478,14 @@ function render(sectie, direction) {
                 "</video>"
             )
             fadeIn()
-
-            //einde filmpje detecteren en dan fadeout
-            document.getElementById('COISE_HART').addEventListener('ended', COISE_HART, false);
-
-            function COISE_HART(e) {
-                fadeOut();
-            }
             break;
 
-        case 55:
+        case 52:
             // fade to black
             fadeOut()
             break;
 
-        case 56:
+        case 53:
             // ACHTERGROND DOOD VAN LILLY
             // Woonkamer Lilly en Leys. Nadat Coisemort Harry heeft proberen vermoorden moet elk meubelstuk kapot zijn buiten de spiegel.
             // We dachten hiervoor echte meubelstukken op het podium te zetten dus zou de achtergrond vooral wat schilderijen of een vensterbank met bloemetjes moeten zijn.
@@ -573,24 +494,24 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 57:
+        case 54:
             // fade to black
             fadeOut()
             break;
 
-        case 58:
+        case 55:
             // ACHTERGROND DOOD VAN LILLY
             invisible()
             setContent("<center><img src=/img/livingroom_empty2.png alt='woonkamer_lenl2' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
-        case 59:
+        case 56:
             // fade to black
             fadeOut()
             break;
 
-        case 60:
+        case 57:
             // FILMPJE TERUG IN DE TIJD
             invisible()
             setContent(
@@ -599,21 +520,14 @@ function render(sectie, direction) {
                 "</video>"
             )
             fadeIn()
-
-            //einde filmpje detecteren en dan fadeout
-            document.getElementById('VORTEX_NA_PAUZE').addEventListener('ended', VORTEX_NA_PAUZE, false);
-
-            function VORTEX_NA_PAUZE(e) {
-                fadeOut();
-            }
             break;
 
-        case 61:
+        case 58:
             // fade to black
             fadeOut()
             break;
 
-        case 62:
+        case 59:
             // ACHTERGROND EEN SPIEGELBEELD UIT HET VERLEDEN
             // Gang in Zwijnaarde
             invisible()
@@ -621,12 +535,12 @@ function render(sectie, direction) {
             fadeIn()
             break;
 
-        case 63:
+        case 60:
             // fade to black
             fadeOut()
             break;
 
-        case 64:
+        case 61:
             // HARY SPIEGEL
             invisible()
             setContent(
@@ -635,21 +549,14 @@ function render(sectie, direction) {
                 "</video>"
             )
             fadeIn()
-
-            //einde filmpje detecteren en dan fadeout
-            document.getElementById('HARRY_SPIEGEL').addEventListener('ended', HARRY_SPIEGEL, false);
-
-            function HARRY_SPIEGEL(e) {
-                fadeOut();
-            }
             break;
 
-        case 65:
+        case 62:
             // fade to black,
             fadeOut()
             break;
 
-        case 66:
+        case 63:
             // SPIEGELLIED
             invisible()
             setContent(
@@ -658,57 +565,50 @@ function render(sectie, direction) {
                 "</video>"
             )
             fadeIn()
-
-            //einde filmpje detecteren en dan fadeout
-            document.getElementById('SPIEGELLIED').addEventListener('ended', SPIEGELLIED, false);
-
-            function SPIEGELLIED(e) {
-                fadeOut();
-            }
             break;
 
-        case 67:
+        case 64:
             // fade to black,
             fadeOut()
             break;
 
-        case 68:
+        case 65:
             // ACHTERGROND LERAARSKAMER ZWIJNAARDE, heel lang
             invisible()
             setContent("<center><img src=/img/LERAAR.jpg alt='leraarskamer' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
-        case 69:
+        case 66:
             // fade to black voor dansje
             fadeOut()
             break;
 
-        case 70:
+        case 67:
             // ACHTERGROND LERAARSKAMER ZWIJNAARDE, heel lang
             invisible()
             setContent("<center><img src=/img/LERAAR.jpg alt='leraarskamer' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
-        case 71:
+        case 68:
             // fade to black
             fadeOut()
             break;
 
-        case 72:
+        case 69:
             // ACHTERGROND LERAARSKAMER ZWIJNAARDE, heel lang
             invisible()
             setContent("<center><img src=/img/hogwarts4.jpg alt='hogwarts4' style='width: 100vw; height: 100vh;'></center>")
             fadeIn()
             break;
 
-        case 73:
+        case 70:
             // fade to black
             fadeOut()
             break;
 
-        case 74:
+        case 71:
             // AFTITLEING
             invisible()
             setContent(
@@ -717,26 +617,9 @@ function render(sectie, direction) {
                 "</video>"
             )
             fadeIn()
-
-            //einde filmpje detecteren en dan fadeout
-            document.getElementById('AFTITELING').addEventListener('ended', myHandler_trailer, false);
-
-            function myHandler_trailer(e) {
-                fadeOut();
-            }
             break;
 
-        case 75:
-            invisible()
-            setContent(
-                "<video autoplay loop muted id='schild'>" +
-                "<source src='/video/schild.mp4' type='video/mp4'>" +
-                "</video>"
-            )
-            fadeIn()
-            break;
-
-        case 76:
+        case 72:
             fadeOut()
             break;
     }
