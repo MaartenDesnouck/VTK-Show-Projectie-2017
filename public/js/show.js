@@ -92,9 +92,9 @@ function render(sectie, direction) {
             fadeIn()
 
             //einde filmpje detecteren en dan fadeout
-            document.getElementById('TRAILER').addEventListener('ended', TRAILER_end, false);
+            document.getElementById('TRAILER').addEventListener('ended', TRAILER, false);
 
-            function myHandler_trailer(e) {
+            function TRAILER(e) {
                 fadeOut();
             }
             break;
@@ -144,15 +144,7 @@ function render(sectie, direction) {
                 "<source src='/video/HAGRID.mp4' type='video/mp4' style='width: 100vw; height: 100vh;'>" +
                 "</video>"
             )
-
-            // einde filmpje detecteren en dan fadeout
-            document.getElementById('HAGRID').addEventListener('ended', myHandler_trailer, false);
-
-            function myHandler_trailer(e) {
-                fadeOut();
-            }
             break;
-
 
         case 10:
             // fade to black
@@ -425,7 +417,7 @@ function render(sectie, direction) {
             setContent(
                 "<div>" +
                 "<img src=/img/forrest.jpg alt='bos' style='position: absolute; width: 100vw; height: 100vh;'>" +
-                "<img src=/img/fire2.gif alt='fire' style='position: absolute; width: 15vw; height: 60vh; bottom: -5vh; left:85vh'>" +
+                "<img src=/img/fire2.gif alt='fire' style='position: absolute; width: 15vw; height: 60vh; bottom: -5vh; left:75vh'>" +
                 "<img src=/img/forrest.jpg alt='bos' id='bos001' style='position: absolute; width: 100vw; height: 100vh;'>" +
                 "</div>"
             )
